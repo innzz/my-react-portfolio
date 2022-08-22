@@ -1,38 +1,217 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home-container{
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
   display: flex;
-  flex-direction: column;
+}
+
+.home-container > .background-image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.left-profile-section{
+  width: 35%;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 3vw;
+  align-items: center;
+}
+
+.profile-pic{
+  width: 85%;
+  height: 85%;
+  border-radius: 30px;
+  box-shadow: 0px 0px 8px 2px rgb(31, 31, 31);
+  overflow: hidden;
+}
+
+.profile-pic > img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.right-content-section{
+  color: #fff;
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content{
+  padding-right: 11vw;
+  padding-left: 5vw;
+  /* margin-right: 3vw; */
+}
+
+.content > p{
+  font-size: 1.1rem;
+  line-height: 35px;
+}
+
+.content-heading{
+  padding-left: 3.5vw;
+  /* position: relative; */
+}
+
+.content-heading > h1{
+  margin: 0;
+}
+
+.content-heading > h1:first-child{
+  color: #71DDFF;
+}
+
+.content-heading{
+  /* padding-left: 10vw; */
+  position: relative;
+  font-size: 1.3rem;
+}
+
+.content-heading::before{
+  content: '';
+  background-color: #71DDFF;
+  /* background-color: #00C2FF; */
+  letter-spacing: -6px;
+  position: absolute;
+  height: 0.8vh;
+  left: 0;
+  top:4.5vh;
+  /* bottom: 11vh; */
+  right: 36vw;
+  font-size: 3rem;
+  border-radius: 5px;
+}
+
+.more-about-me-button{
+  display: flex;
+  width: 40%;
+  border: 1px solid #71DDFF;
+  position: relative;
+  border-radius: 100px;
+  padding: 2.3vh 0;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.more-about-me-button > span:nth-child(1){
+  display: flex;
+  align-items: center;
+  padding-left: 2vw;
+  z-index: 2;
+}
+
+.more-about-me-button > span:nth-child(2){
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #71deffb1;
+  padding: 1.6vh 0.8vw;
+  border-radius: 100px;
+  position: absolute;
+  width: 13%;
+  height: 57%;
+  right: 0;
+  top: 0;
+  transition: 1s;
+  transition-duration: 1s;
+  z-index: 1;
+  /* left: 0; */
 }
 
-.App-link {
-  color: #61dafb;
+/* @keyframes moveLeft {
+  0% {
+    width: 30%
+  }
+  100%{
+    width: 100%
+  }
+} */
+
+.more-about-me-button:hover  span:nth-child(2) {
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.more-about-me-button > svg {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  z-index: 3;
 }
+
+.sidebar{
+  width: 15vw;
+  /* background-color: white; */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  height: 80%;
+}
+
+.sidebar > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  border-radius: 360px;
+  width: 3.8vw;
+  height: 10%;
+  /* padding: 2vh 0;
+  margin: 0 2.2vw;
+  margin-bottom: 15vh; */
+}
+
+
+.sidebar > .group-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 55%;
+  /* width: 100%; */
+}
+.sidebar > .group-icons > span {
+  display: flex;
+  justify-content: center;
+  background-color: gray;
+  border-radius: 360px;
+  text-align: left;
+  padding: 2vh 2vw;
+  /* width: 100%; */
+  position: relative;
+  height: 3.8vh;
+  padding-right: 5vw;
+  font-size: 1.2rem;
+  /* z-index: 2; */
+}
+
+/* .sidebar > .group-icons > span > svg {
+  background-color: aliceblue;
+  z-index: 3;
+}
+
+.sidebar > .group-icons > span > span{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background-color: #71DDFF;
+  top: 0;
+  right: 0;
+  left: -150px;
+  z-index: 1;
+  border-radius: 360px;
+  bottom: 0;
+  padding-left: 2vw;
+  text-align: center;
+} */
