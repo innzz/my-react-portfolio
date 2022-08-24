@@ -1,0 +1,160 @@
+.home-container{
+    animation: mainPage;
+    animation-delay: 0.3s;
+    animation-duration: 1.8s;
+    animation-fill-mode: forwards;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+  }
+  @keyframes mainPage {
+    0%{
+      transform: translateY(50px);
+    }
+    80%{
+      transform: translateY(0px);
+    }
+  }
+  
+  .left-profile-section{
+    width: 35%;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 3vw;
+    align-items: center;
+  }
+  
+  .profile-pic{
+    width: 85%;
+    height: 85%;
+    border-radius: 30px;
+    box-shadow: 0px 0px 8px 2px rgb(31, 31, 31);
+    overflow: hidden;
+  }
+  
+  .profile-pic > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .right-content-section{
+    color: #fff;
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .content{
+    padding-right: 7vw;
+    padding-left: 5vw;
+  }
+  
+  .content > p{
+    font-size: 1.1rem;
+    padding-right: 5vw;
+    line-height: 35px;
+  }
+  
+  .content-heading{
+    padding-left: 3.5vw;
+  }
+  
+  .content-heading > h1{
+    margin: 0;
+  }
+  
+  .content-heading > h1:first-child{
+    color: #71DDFF;
+  }
+  
+  .content-heading{
+    position: relative;
+    font-size: 1.3rem;
+  }
+  
+  .content-heading::before{
+    content: '';
+    background-color: #71DDFF;
+    letter-spacing: -6px;
+    position: absolute;
+    height: 0.8vh;
+    left: 0;
+    top:3.9vh;
+    bottom: 2vh;
+    width: 2.3vw;
+    font-size: 3rem;
+    border-radius: 5px;
+  }
+  
+  .more-about-me-button{
+    display: flex;
+    width: 15vw;
+    font-weight: 500;
+    border: 2px solid #71DDFF;
+    position: relative;
+    border-radius: 100px;
+    padding: 2.3vh 0;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .more-about-me-button:hover span:nth-child(2){
+    animation: moveFromLeft 0.5s;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  
+  .more-about-me-button > span:nth-child(1){
+    display: flex;
+    align-items: center;
+    padding-left: 2vw;
+    z-index: 2;
+  }
+  
+  .more-about-me-button > span:nth-child(2){
+    background-color: #71DDFF;
+    border-radius: 100px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+  }
+  
+  .more-about-me-button > span:nth-child(3){
+    position: absolute;
+    background-color: #71DDFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    width: 4vw;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+  @keyframes moveFromLeft {
+    0% {
+      transform: translateX(150px);
+    }
+    100%{
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+  
+  .more-about-me-button:hover  span:nth-child(2) {
+    width: 100%;
+  }
+  
+  .more-about-me-button > svg {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    z-index: 3;
+  }
+  

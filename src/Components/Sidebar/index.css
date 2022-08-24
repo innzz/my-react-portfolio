@@ -1,0 +1,114 @@
+.sidebar{
+    width: 15vw;
+    /* background-color: white; */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 65vh;
+  }
+  
+  .sidebar > span {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 3vh;
+    /* background-color: gray; */
+    /* width: 10vw;
+    height: 10vh; */
+    /* max-width: 10vw;
+    min-width: 5vw; */
+    /* max-height: 10vh;
+    min-height: 2vh; */
+    /* padding: 2vh 0;
+    margin: 0 2.2vw;
+    margin-bottom: 15vh; */
+  }
+  
+  .sidebar > span > svg {
+    background-color: gray;
+    width: 2vw;
+    padding: 1.5vh 0.2vw;
+    border-radius: 360px;
+    max-width: 10px;
+    min-width: 44px;
+    /* max-width: 1vw; */
+  }
+  
+  
+  .sidebar > .group-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 40vh;
+    overflow: hidden;
+    /* width: 100%; */
+  }
+
+  .sidebar > .group-icons > a{
+    text-decoration: none;
+
+  }
+
+  .sidebar > .group-icons > a >  span {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* width: 100%; */
+    position: relative;
+    /* height: 5vh; */
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  
+  .sidebar > .group-icons >a > span > span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #71DDFF;
+    padding: 1.7vh 2vw;
+    /* height: 5vh; */
+    border-radius: 360px;
+    text-align: left;
+    padding-right: 4vw;
+    opacity: 0;
+    color: #fff;
+  }
+  
+  @keyframes fadeRight {
+    0%{
+      transform: translateX(3px);
+    }
+    100%{
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+  
+  .sidebar > .group-icons > a > span:hover span{
+    animation: fadeRight 2s;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+  }
+  
+  .sidebar > .group-icons > a > span > svg {
+    position: absolute;
+    color: #fff;
+    right: 0;
+    top: 0;
+    transition: 0.5s;
+    bottom: 0;
+    background-color: gray;
+    width: 3vw;
+    padding: 2.1vh 0.3vw;
+    border-radius: 360px;
+    max-width: 20px;
+    min-width: 40px;
+  }
+  
