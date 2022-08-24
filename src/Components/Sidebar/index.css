@@ -10,6 +10,7 @@
     justify-content: space-between;
     align-items: flex-end;
     height: 65vh;
+    padding-right: 1.7vw;
   }
   
   .sidebar > span {
@@ -45,7 +46,6 @@
     flex-direction: column;
     justify-content: space-around;
     height: 40vh;
-    overflow: hidden;
     /* width: 100%; */
   }
 
@@ -64,6 +64,9 @@
     font-size: 1.2rem;
     font-weight: 500;
     cursor: pointer;
+    padding-left: 0;
+    padding-right: 0;
+    /* width: 0vw; */
   }
   
   
@@ -79,22 +82,29 @@
     padding-right: 4vw;
     opacity: 0;
     color: #fff;
+    width: 0vw;
+    padding-left: 0;
+    padding-right: 0;
   }
   
   @keyframes fadeRight {
     0%{
       transform: translateX(3px);
+      width: 4vw;
     }
     100%{
       transform: translateX(0px);
       opacity: 1;
+      width: 6vw;
+      padding-left: 1vw;
+      padding-right: 3vw;
     }
   }
   
   .sidebar > .group-icons > a > span:hover span{
     animation: fadeRight 2s;
     animation-fill-mode: forwards;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
   }
   
   .sidebar > .group-icons > a > span > svg {

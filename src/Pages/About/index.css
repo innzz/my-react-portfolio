@@ -16,8 +16,9 @@
     font-weight: 800;
     margin: 0;
     color: #fff;
-    padding: 5vh 0;
+    padding: 9vh 0;
     margin: 2vh 0;
+    margin-top: 0.5vh;
 }
 
 .heading > span {
@@ -33,10 +34,10 @@
     text-align: center;
     color: rgb(47, 47, 47);
     z-index: -1;
-    font-size: 15vh;
+    font-size: 20vh;
     font-weight: 800;
     letter-spacing: 8px;
-    margin: 2vh 0;
+    margin: 0.5vh 0;
 }
 
 /* .heading::before {
@@ -56,6 +57,11 @@
 
 .personal-info-section{
     display: flex;
+    animation: fadeIn;
+    animation-delay: 0.5s;
+    animation-duration: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
     /* margin: auto; */
     /* flex-wrap: wrap; */
 }
@@ -189,6 +195,11 @@
 
 .skills-section{
     padding-bottom: 10vh;
+    /* opacity: 0;
+    animation: fadeIn;
+    animation-delay: 0.5s;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards; */
 }
 
 .inner-heading {
@@ -196,7 +207,7 @@
     padding: 10vh 0;
 }
 
-.skills-section > .inner-heading > span{
+.inner-heading > span{
     border-top: 1px solid #666;
     padding: 3vh 10vw;
     padding-top: 8vh;
@@ -206,6 +217,7 @@
 
 .skills-loaders-section{
    padding: 0 10vw;
+   opacity: 0;
 }
 
 .skills-loaders-section > .row{
@@ -219,7 +231,71 @@
     color: #fff;
 }
 
+
 .skills-loaders-section > .row > .col > h6{
     margin: 3vh 0;
     font-size: 2vh
+}
+
+.education-cards-section{
+    color: #fff;
+    padding: 20px 30px 25px 40px;
+    opacity: 0;
+}
+
+.education-cards-section > .row {
+    display: flex;
+    margin-bottom: 5vh;
+}
+
+.education-cards-section > .row > .col{
+    width: 50%;
+    padding: 0 3vw;
+    border-left: 1px solid #666;
+    position: relative;
+}
+
+.education-cards-section > .row > .col > h1{
+    font-size: 2.5vh;
+    padding-top: 3vh;
+}
+
+.education-cards-section > .row > .col > h1 > span{
+    font-size: 2vh;
+    color: rgba(255, 255, 255, 0.815);
+}
+
+.education-cards-section > .row > .col > span{
+    background: rgb(47, 47, 47);
+    font-weight: 600;
+    padding: 0.4vh 1vw;
+    border-radius: 50px;
+    font-size: 1.8vh;
+}
+
+.education-cards-section > .row > .col > svg{
+    background: #71DDFF;
+    padding: 0.9vh 0.4vw;
+    border-radius: 80px;
+    position: absolute;
+    top: -0.7vh;
+    left: -1.2vw;
+}
+
+
+.scroll-down-arrow{
+    position: absolute;
+    top: 8vh;
+    left: 5vw;
+    animation: bounce 2s;
+    animation-iteration-count: infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-down-arrow > h6{
+    margin: 0;
+    margin-bottom: 0.5vh;
 }

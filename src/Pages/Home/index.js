@@ -1,5 +1,5 @@
 import './index.css';
-import {IoMdArrowRoundForward} from 'react-icons/io';
+// import {IoMdArrowRoundForward} from 'react-icons/io';
 // import Sidebar from '../Sidebar';
 import backgroundImage from '../../assets/images/bg.svg'
 import lightBackgroundImage from '../../assets/images/lightbg1.svg'

@@ -1,0 +1,12 @@
+.projects-page{
+    max-width: 1300px;
+    display: flex;
+    /* justify-content: center; */
+    margin: auto;
+    flex-direction: column;
+    min-width: 600px;
+    animation: mainPage;
+    animation-delay: 0.3s;
+    animation-duration: 1.8s;
+    animation-fill-mode: forwards;
+}

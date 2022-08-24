@@ -1,15 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Sidebar from '../../Components/Sidebar'
 import './index.css';
 import {Row,Col} from 'react-bootstrap'
-import {IoMdArrowRoundForward} from 'react-icons/io';
+// import {IoMdArrowRoundForward} from 'react-icons/io';
 import {RiDownload2Fill} from 'react-icons/ri';
+import {TbArrowBigDownLines} from 'react-icons/tb';
+import {GiSuitcase} from 'react-icons/gi';
 import PercentageCircle from '../../Components/PercentageCircle'
 
 function About({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkMode}) {
-  setActive('About')
+  const [showScroll, setShowScroll] = useState(true);
+  const [animationSkillsSection, setAnimationSkillsSection] = useState({animation: 'none'});
+  const [educationSection, setEducationSection] = useState({animation: 'none'});
+  setActive('About');
+  const changeColor = (e)=>{
+    if(e.currentTarget.scrollTop >= 100){
+      setShowScroll(false);
+    }
+    else{
+      setShowScroll(true);
+    }
+    if(e.currentTarget.scrollTop >= 30){
+      setAnimationSkillsSection({animation: 'fadeInRight',
+      animationDelay: '0.3s',
+      animationDuration: '0.5s',
+      animationFillMode: 'forwards'});
+      // console.log(e.currentTarget.scrollTop)
+    }
+    else{
+      setAnimationSkillsSection({animation: 'none'});
+
+    }
+    if(e.currentTarget.scrollTop >= 700){
+      setEducationSection({animation: 'fadeIn',
+      animationDelay: '0.5s',
+      animationDuration: '0.5s',
+      animationFillMode: 'forwards'});
+      // console.log(e.currentTarget.scrollTop)
+    }
+    else{
+      setEducationSection({animation: 'none'});
+
+    }
+    // console.log(animationSkillsSection)
+    
+  };
   return (
-    <div className='secondary-body' style={toggleDarkMode?{background:'#111'}:{background:'rgb(244, 253, 255)'}}>
+    <div onScroll={changeColor} className='secondary-body' style={toggleDarkMode?{background:'#111'}:{background:'rgb(244, 253, 255)'}}>
     <div className='about-page' >
       <h1 style={toggleDarkMode?{color:'#fff'}:{color:'#666'}} className='heading'>
         ABOUT <span>ME</span>
@@ -63,11 +100,12 @@ function About({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkMode
             </Row>
         </div>
       </div>
-      <div className="skills-section">
+      <div className="skills-section" >
+      {/* <div className="skills-section" style={animationSkillsSection?{animation:'fadeIn'}:{}}> */}
         <h1 className="inner-heading">
           <span style={toggleDarkMode?{color:'#fff',borderColor:'#666'}:{color:'#777',borderColor:'#eee'}} >MY SKILLS</span>
         </h1>
-        <div className="skills-loaders-section">
+        <div className="skills-loaders-section" style={animationSkillsSection}>
           <Row>
             <Col>
                 <PercentageCircle hover={hover} setHover={setHover} active={active} setActive={setActive} toggleDarkMode={toggleDarkMode} setToggleDarkMode={setToggleDarkMode} percentage={50} />
@@ -110,9 +148,43 @@ function About({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkMode
         <h1 className="inner-heading">
           <span style={toggleDarkMode?{color:'#fff',borderColor:'#666'}:{color:'#777',borderColor:'#eee'}} >EDUCATION & EXPERIENCE</span>
         </h1>
+        <div className="education-cards-section" style={educationSection}>
+          <Row>
+            <Col>
+            <span style={toggleDarkMode?{color:'rgba(255, 255, 255, 0.815)'}:{color:'#777',background:'#eee'}}>2022 - PRESENT</span>
+            <h1 style={toggleDarkMode?{color:'#fff'}:{color:'#666'}}>FULL STACK DEVELOPER -<span style={toggleDarkMode?{color:'rgba(255, 255, 255, 0.815)'}:{color:'#777'}}> CREDENCESOFT</span></h1>
+            <p style={toggleDarkMode?{color:'rgba(255, 255, 255, 0.815)'}:{color:'#777'}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus mollitia praesentium repellendus? Quae?</p>
+            <GiSuitcase size={25} />
+            </Col>
+            <Col>
+            <span style={toggleDarkMode?{color:'rgba(255, 255, 255, 0.815)'}:{color:'#777',background:'#eee'}}>2022 - PRESENT</span>
+            <h1 style={toggleDarkMode?{color:'#fff'}:{color:'#666'}}>FULL STACK DEVELOPER -<span style={toggleDarkMode?{color:'rgba(255, 255, 255, 0.815)'}:{color:'#777'}}> CREDENCESOFT</span></h1>
+            <p style={toggleDarkMode?{color:'rgba(255, 255, 255, 0.815)'}:{color:'#777'}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus mollitia praesentium repellendus? Quae?</p>
+            <GiSuitcase size={25} />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+            <span style={toggleDarkMode?{color:'rgba(255, 255, 255, 0.815)'}:{color:'#777',background:'#eee'}}>2022 - PRESENT</span>
+            <h1 style={toggleDarkMode?{color:'#fff'}:{color:'#666'}}>FULL STACK DEVELOPER -<span style={toggleDarkMode?{color:'rgba(255, 255, 255, 0.815)'}:{color:'#777'}}> CREDENCESOFT</span></h1>
+            <p style={toggleDarkMode?{color:'rgba(255, 255, 255, 0.815)'}:{color:'#777'}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus mollitia praesentium repellendus? Quae?</p>
+            <GiSuitcase size={25} />
+            </Col>
+            <Col>
+            <span style={toggleDarkMode?{color:'rgba(255, 255, 255, 0.815)'}:{color:'#777',background:'#eee'}}>2022 - PRESENT</span>
+            <h1 style={toggleDarkMode?{color:'#fff'}:{color:'#666'}}>FULL STACK DEVELOPER -<span style={toggleDarkMode?{color:'rgba(255, 255, 255, 0.815)'}:{color:'#777'}}> CREDENCESOFT</span></h1>
+            <p style={toggleDarkMode?{color:'rgba(255, 255, 255, 0.815)'}:{color:'#777'}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus mollitia praesentium repellendus? Quae?</p>
+            <GiSuitcase size={25} />
+            </Col>
+          </Row>
+        </div>
       </div>
     </div>
       <Sidebar hover={hover} setHover={setHover} active={active} setActive={setActive} toggleDarkMode={toggleDarkMode} setToggleDarkMode={setToggleDarkMode} />
+      {showScroll?<span style={toggleDarkMode?{color:'#eee'}:{color:'#666'}} className="scroll-down-arrow">
+        <h6>SCROLL</h6>
+        <TbArrowBigDownLines size={30}/>
+      </span>:''}
     <div style={toggleDarkMode?{background:'#252525'}:{background:'#d1f0fa'}} className="loading-screen"></div>
     </div>
   )
