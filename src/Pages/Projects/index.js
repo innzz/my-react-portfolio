@@ -1,6 +1,7 @@
 import React from 'react'
 import Sidebar from '../../Components/Sidebar'
 import './index.css';
+import projectImg from '../../assets/images/project.png';
 // import {Row,Col} from 'react-bootstrap'
 // import {IoMdArrowRoundForward} from 'react-icons/io';
 // import {RiDownload2Fill} from 'react-icons/ri';
@@ -18,6 +19,52 @@ function Projects ({hover,active,setActive,setHover,toggleDarkMode,setToggleDark
           WORKS
         </h1>
       </h1>
+      <div className="projects-cards-section">
+        <div className="projects-cards-row">
+          <div className="projects-card-col">
+            <div className="projects-card">
+              <img src={projectImg} alt="" />
+              <div className="projects-card-content">
+                <h1>REACT PROJECT</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, corporis.</p>
+                <button>VIEW</button>
+              </div>
+            </div>
+          </div>
+          <div className="projects-card-col">
+            <div className="projects-card">
+              <img src={projectImg} alt="" />
+              <div className="projects-card-content">
+                <h1>REACT PROJECT</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, corporis.</p>
+                <button>VIEW</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="projects-cards-row">
+          <div className="projects-card-col">
+            <div className="projects-card">
+              <img src={projectImg} alt="" />
+              <div className="projects-card-content">
+                <h1>REACT PROJECT</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, corporis.</p>
+                <button>VIEW</button>
+              </div>
+            </div>
+          </div>
+          <div className="projects-card-col">
+            <div className="projects-card">
+              <img src={projectImg} alt="" />
+              <div className="projects-card-content">
+                <h1>REACT PROJECT</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, corporis.</p>
+                <button>VIEW</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
       <Sidebar hover={hover} setHover={setHover} active={active} setActive={setActive} toggleDarkMode={toggleDarkMode} setToggleDarkMode={setToggleDarkMode} />
     <div style={toggleDarkMode?{background:'#252525'}:{background:'#d1f0fa'}} className="loading-screen"></div>

@@ -13,7 +13,7 @@
 
 .contact-content{
     display: flex;
-    margin-bottom: 25vh;
+    /* margin-bottom: 5vh; */
 }
 
 .contact-details{
@@ -73,7 +73,7 @@
 
 .contact-inputs-container{
     width: 60%;
-    margin-bottom: 20vh;
+    /* margin-bottom: 20vh; */
 }
 
 .contact-inputs-container > .row{
