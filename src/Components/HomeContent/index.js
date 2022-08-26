@@ -1,15 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Sidebar from '../Sidebar';
 import {IoMdArrowRoundForward} from 'react-icons/io';
 import './index.css'
 
 function HomeContent({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkMode}) {
+  function getWindowSize() {
+    const {innerWidth, innerHeight} = window;
+    return {innerWidth, innerHeight};
+  }
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
   return (
+    <>
     <div className="home-container">
         <div className="left-profile-section">
-          <div className="profile-pic">
+          {windowSize.innerWidth <= 1150 ? <div style={toggleDarkMode?{border: "5px solid #252525"}:{border:"5px solid #eee"}} className="profile-pic">
             <img src="propic.jpeg" alt="" />
-          </div>
+          </div>:<div className="profile-pic">
+            <img src="propic.jpeg" alt="" />
+          </div>}
         </div>
         <div className='right-content-section'>
           <div className="content">
@@ -29,8 +49,9 @@ function HomeContent({hover,active,setActive,setHover,toggleDarkMode,setToggleDa
             </div>
           </div>
         </div>
-        <Sidebar toggleDarkMode={toggleDarkMode} setToggleDarkMode={setToggleDarkMode} active={active} hover={hover} setActive={setActive} setHover={setHover}/>
       </div>
+        <Sidebar toggleDarkMode={toggleDarkMode} setToggleDarkMode={setToggleDarkMode} active={active} hover={hover} setActive={setActive} setHover={setHover}/>
+    </>
   )
 }
 

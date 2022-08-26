@@ -37,7 +37,10 @@ function Home({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkMode}
         </div>
         <Sidebar toggleDarkMode={toggleDarkMode} setToggleDarkMode={setToggleDarkMode} active={active} hover={hover} setActive={setActive} setHover={setHover}/>
       </div> */}
-        {toggleDarkMode ? <img className='background-image' src={backgroundImage} alt="background" />:<img className='background-image' src={lightBackgroundImage} alt="background" />}
+        {/* {toggleDarkMode ? <img className='background-image' src={backgroundImage} alt="background" />:<img className='background-image' src={lightBackgroundImage} alt="background" />} */}
+        <div style={toggleDarkMode?{background:"rgb(17, 17, 17)"}:{background:"rgb(244, 253, 255)"}} className='background-image'>
+          <div></div>
+        </div>
     </div>
     <div style={toggleDarkMode?{background:'#252525'}:{background:'#d1f0fa'}} className="loading-screen"></div>
     </>

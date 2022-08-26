@@ -1,14 +1,16 @@
 .about-page{
-    max-width: 1300px;
+    /* max-width: 1300px; */
     display: flex;
     /* justify-content: center; */
     margin: auto;
     flex-direction: column;
-    min-width: 600px;
+    /* min-width: 600px; */
+    width: 95%;
     animation: mainPage;
     animation-delay: 0.3s;
     animation-duration: 1.8s;
     animation-fill-mode: forwards;
+    overflow-x: hidden;
 }
 .heading {
     text-align: center;
@@ -194,7 +196,7 @@
 }
 
 .skills-section{
-    padding-bottom: 10vh;
+    /* padding-bottom: 10vh; */
     /* opacity: 0;
     animation: fadeIn;
     animation-delay: 0.5s;
@@ -202,15 +204,22 @@
     animation-fill-mode: forwards; */
 }
 
+.partition{
+    width: 30vw;
+    margin: 60px auto;
+    background: #252525;
+    height: 0.1px;
+}
+
 .inner-heading {
+    /* border-top: 1px solid #666; */
     text-align: center;
-    padding: 10vh 0;
+    padding-bottom: 20px;
 }
 
 .inner-heading > span{
-    border-top: 1px solid #666;
-    padding: 3vh 10vw;
-    padding-top: 8vh;
+    /* padding: 3vh 10vw; */
+    /* padding-top: 8vh; */
     text-align: center;
     color: #fff;
 }
@@ -298,4 +307,34 @@
 .scroll-down-arrow > h6{
     margin: 0;
     margin-bottom: 0.5vh;
+}
+
+
+  
+@media screen and (max-width: 1400px) {
+
+    .heading{
+        font-size: 45px;
+    }
+
+    .secondary-heading{
+        font-size: 35px;
+    }
+      
+    .personal-info-section{
+        flex-direction: column;
+    }
+
+    .personal-info-section > .personal-infos{
+        width: 100%;
+    }
+
+    .personal-info-section > .personal-infos-cards{
+        width: 100%;
+    }
+
+    .personal-infos > .more-about-me-section > .more-about-me-button{
+        margin-left: 0;
+    }
+    
 }

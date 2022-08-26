@@ -100,6 +100,7 @@ function About({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkMode
             </Row>
         </div>
       </div>
+      <div style={toggleDarkMode?{background:"#252525"}:{background:'#ddd'}} className="partition"></div>
       <div className="skills-section" >
       {/* <div className="skills-section" style={animationSkillsSection?{animation:'fadeIn'}:{}}> */}
         <h1 className="inner-heading">
@@ -144,6 +145,7 @@ function About({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkMode
           </Row>
         </div>
       </div>
+      <div style={toggleDarkMode?{background:"#252525"}:{background:'#ddd'}} className="partition"></div>
       <div className="education-section">
         <h1 className="inner-heading">
           <span style={toggleDarkMode?{color:'#fff',borderColor:'#666'}:{color:'#777',borderColor:'#eee'}} >EDUCATION & EXPERIENCE</span>
