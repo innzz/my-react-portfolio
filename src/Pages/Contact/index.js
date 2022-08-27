@@ -46,8 +46,8 @@ function Contact ({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkM
             </div>
           </div>
           <div className="account-links">
-              <GoMarkGithub size={23} />
-              <SiLinkedin size={23} />
+              <GoMarkGithub size={28} />
+              <SiLinkedin size={28} />
             </div>
         </div>
         <div className="contact-inputs-container">

@@ -5,7 +5,7 @@
     margin: auto;
     flex-direction: column;
     /* min-width: 600px; */
-    width: 95%;
+    width: 90vw;
     animation: mainPage;
     animation-delay: 0.3s;
     animation-duration: 1.8s;
@@ -62,6 +62,8 @@
     animation: fadeIn;
     animation-delay: 0.5s;
     animation-duration: 2s;
+    width: 100%;
+    margin: auto;
     opacity: 0;
     animation-fill-mode: forwards;
     /* margin: auto; */
@@ -88,8 +90,8 @@
     width: 50%;
     /* height: 50vh; */
     /* background-color: #71DDFF; */
-    padding: 1vh 2vw;
-    margin: 0 0.5vw;
+    /* padding: 1vh 2vw;
+    margin: 0 0.5vw; */
 }
 
 .personal-infos-inputs-section {
@@ -107,6 +109,7 @@
     padding: 1.5vh 0;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.815);
+    margin-right: 12px;
 }
 
 .personal-infos-inputs-section > .left-personal-infos-inputs-section > span > span {
@@ -124,6 +127,7 @@
     padding: 1.5vh 0;
     color: rgba(255, 255, 255, 0.815);
     font-weight: 600;
+    margin-right: 12px;
 }
 
 .personal-infos-inputs-section > .right-personal-infos-inputs-section > span > span {
@@ -260,6 +264,8 @@
 .education-cards-section > .row > .col{
     width: 50%;
     padding: 0 3vw;
+    padding-right: 0;
+    margin-right: 3vw;
     border-left: 1px solid #666;
     position: relative;
 }
@@ -284,11 +290,11 @@
 
 .education-cards-section > .row > .col > svg{
     background: #71DDFF;
-    padding: 0.9vh 0.4vw;
+    padding: 10px 10px;
     border-radius: 80px;
     position: absolute;
     top: -0.7vh;
-    left: -1.2vw;
+    left: -23px;
 }
 
 
@@ -315,10 +321,16 @@
 
     .heading{
         font-size: 45px;
+        text-align: left;
+        margin-top: 20px;
+        margin-left: 40px;
+        padding: 15px 0;
     }
 
     .secondary-heading{
-        font-size: 35px;
+        font-size: 75px;
+        margin-top: 10px;
+        text-align: left;
     }
       
     .personal-info-section{
@@ -327,14 +339,132 @@
 
     .personal-info-section > .personal-infos{
         width: 100%;
+        padding: 0;
+        margin: 0;
     }
-
+    
     .personal-info-section > .personal-infos-cards{
         width: 100%;
+        padding: 0;
+        margin: 0;
+        margin-top: 30px;
     }
 
     .personal-infos > .more-about-me-section > .more-about-me-button{
         margin-left: 0;
     }
     
+}
+
+@media screen and (max-width: 1000px) {
+    .skills-loaders-section{
+        padding: 0;
+     }
+    }
+
+@media screen and (max-width: 600px) {
+    .skills-loaders-section > .row{
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+     }
+    .skills-loaders-section > .row > .col{
+        width: 50%;
+     }
+}
+
+@media screen and (max-width: 900px) {
+    
+    .education-cards-section{
+        margin-bottom: 100px;
+        padding: 0;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .education-cards-section > .row {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    
+    .education-cards-section > .row > .col{
+        width: 100%;
+        margin-top: 30px;
+    }
+    
+    .education-cards-section > .row > .col > span{
+        margin-left: 20px;
+        padding: 5px 8px;
+    }
+    
+    .education-cards-section > .row > .col > h1{
+        margin: 1px 0;
+    }
+}
+    
+
+@media screen and (max-width: 500px) {
+
+    .about-page{
+        width: 95vw;
+    }
+    
+    /* .personal-infos-cards > .row {
+        flex-direction: column;
+    } */
+    
+    /* .personal-infos-cards > .row > .col {
+        width: 90%;
+    } */
+    .personal-infos-inputs-section > .left-personal-infos-inputs-section{
+        margin-right: 70px;
+    }
+
+    .card-content{
+        padding: 15px 20px 20px 25px;;
+    }
+    
+    .card-content > p{
+        padding-left: 0;
+    }
+    
+    .card-content > p::before{
+        display: none;
+    }
+
+    .heading{
+        margin-left: 2px;
+    }
+    
+    .secondary-heading{
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    
+    .personal-infos-cards > .row {
+        flex-direction: column;
+    }
+    
+    .personal-infos-cards > .row > .col {
+        width: 90%;
+        margin-top: 10px;
+    }
+
+    /* .heading{
+        font-size: 35px;
+        text-align: left;
+        margin-top: 20px;
+        margin-left: 40px;
+        padding: 10px 0;
+        margin-left: 0;
+    } */
+
+    /* .secondary-heading{
+        font-size: 55px;
+        margin-top: 5px;
+        text-align: left;
+        padding: 10px 0;
+    } */
 }

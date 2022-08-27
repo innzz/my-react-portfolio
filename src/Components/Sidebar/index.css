@@ -22,11 +22,8 @@
   
   .sidebar > span > svg {
     background-color: gray;
-    width: 2vw;
-    padding: 1.5vh 0.2vw;
+    padding: 15px 15px;
     border-radius: 360px;
-    max-width: 10px;
-    min-width: 44px;
     /* max-width: 1vw; */
   }
   

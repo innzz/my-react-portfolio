@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Sidebar from '../../Components/Sidebar'
 import './index.css';
 import projectImg from '../../assets/images/project.png';
@@ -9,10 +9,40 @@ import projectImg from '../../assets/images/project.png';
 // import PercentageCircle from '../../Components/PercentageCircle'
 
 function Projects ({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkMode}) {
-  setActive('Projects')
+  setActive('Projects');
+  const [showClickMe, setShowClickMe] = useState(false);
+  function getWindowSize() {
+    const {innerWidth, innerHeight} = window;
+    return {innerWidth, innerHeight};
+  }
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
+  
+  const clickMeFunction = ()=>{
+    if (windowSize.innerWidth <= 700) {
+      setShowClickMe(true);
+    }
+    else{
+      setShowClickMe(false);
+    }
+  }
+
+
+
   return (
     <div className='secondary-body' style={toggleDarkMode?{background:'#111'}:{background:'rgb(244, 253, 255)'}}>
-    <div className='projects-page' >
+    <div className='projects-page' onLoad={clickMeFunction}>
       <h1 style={toggleDarkMode?{color:'#fff'}:{color:'#666'}} className='heading'>
         MY <span>PROJECTS</span>
         <h1 style={toggleDarkMode?{color:'rgb(47, 47, 47)'}:{color:'rgba(30,37,48,.07)'}} className="secondary-heading">
@@ -22,19 +52,20 @@ function Projects ({hover,active,setActive,setHover,toggleDarkMode,setToggleDark
       <div className="projects-cards-section">
         <div className="projects-cards-row">
           <div className="projects-card-col">
-            <div className="projects-card">
+            <div className="projects-card" onMouseOver={()=>setShowClickMe(false)}>
               <img src={projectImg} alt="" />
-              <div className="projects-card-content">
+              <div className="projects-card-content" style={toggleDarkMode?{background:"rgb(47, 47, 47)",color:"#fff"}:{background:"#f3f3f3",color:"#666"}}>
                 <h1>REACT PROJECT</h1>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, corporis.</p>
                 <button>VIEW</button>
+                {showClickMe? <p style={toggleDarkMode?{color:"#fff"}:{color:"#666"}}>CLICK ME!</p>:''}
               </div>
             </div>
           </div>
           <div className="projects-card-col">
             <div className="projects-card">
               <img src={projectImg} alt="" />
-              <div className="projects-card-content">
+              <div className="projects-card-content" style={toggleDarkMode?{background:"rgb(47, 47, 47)",color:"#fff"}:{background:"#f3f3f3",color:"#666"}}>
                 <h1>REACT PROJECT</h1>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, corporis.</p>
                 <button>VIEW</button>
@@ -46,7 +77,7 @@ function Projects ({hover,active,setActive,setHover,toggleDarkMode,setToggleDark
           <div className="projects-card-col">
             <div className="projects-card">
               <img src={projectImg} alt="" />
-              <div className="projects-card-content">
+              <div className="projects-card-content" style={toggleDarkMode?{background:"rgb(47, 47, 47)",color:"#fff"}:{background:"#f3f3f3",color:"#666"}}>
                 <h1>REACT PROJECT</h1>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, corporis.</p>
                 <button>VIEW</button>
@@ -56,7 +87,7 @@ function Projects ({hover,active,setActive,setHover,toggleDarkMode,setToggleDark
           <div className="projects-card-col">
             <div className="projects-card">
               <img src={projectImg} alt="" />
-              <div className="projects-card-content">
+              <div className="projects-card-content" style={toggleDarkMode?{background:"rgb(47, 47, 47)",color:"#fff"}:{background:"#f3f3f3",color:"#666"}}>
                 <h1>REACT PROJECT</h1>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, corporis.</p>
                 <button>VIEW</button>

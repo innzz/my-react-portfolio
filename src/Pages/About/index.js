@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Sidebar from '../../Components/Sidebar'
 import './index.css';
 import {Row,Col} from 'react-bootstrap'
@@ -13,6 +13,23 @@ function About({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkMode
   const [animationSkillsSection, setAnimationSkillsSection] = useState({animation: 'none'});
   const [educationSection, setEducationSection] = useState({animation: 'none'});
   setActive('About');
+  function getWindowSize() {
+    const {innerWidth, innerHeight} = window;
+    return {innerWidth, innerHeight};
+  }
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
   const changeColor = (e)=>{
     if(e.currentTarget.scrollTop >= 100){
       setShowScroll(false);
@@ -183,10 +200,10 @@ function About({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkMode
       </div>
     </div>
       <Sidebar hover={hover} setHover={setHover} active={active} setActive={setActive} toggleDarkMode={toggleDarkMode} setToggleDarkMode={setToggleDarkMode} />
-      {showScroll?<span style={toggleDarkMode?{color:'#eee'}:{color:'#666'}} className="scroll-down-arrow">
+      {windowSize.innerWidth >= 1400 ? <div>{showScroll?<span style={toggleDarkMode?{color:'#eee'}:{color:'#666'}} className="scroll-down-arrow">
         <h6>SCROLL</h6>
         <TbArrowBigDownLines size={30}/>
-      </span>:''}
+      </span>:''}</div>:''}
     <div style={toggleDarkMode?{background:'#252525'}:{background:'#d1f0fa'}} className="loading-screen"></div>
     </div>
   )
