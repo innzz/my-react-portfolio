@@ -47,7 +47,7 @@
     width: 100%;
 }
 
-.projects-card:hover  .projects-card-content > button{
+.projects-card:hover  .projects-card-content > a > button{
     /* display: block; */
     transform: translateY(0px);
     opacity: 1;
@@ -65,7 +65,7 @@
     z-index: -1;
 }
 
-.projects-card > .projects-card-content > button {
+.projects-card > .projects-card-content > a > button {
     transform: translateY(30px);
     padding: 10px 15px;
     margin-top: 0.5vh;

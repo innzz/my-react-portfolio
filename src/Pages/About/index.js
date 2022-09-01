@@ -110,7 +110,7 @@ function About({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkMode
               </Col>
               <Col style={toggleDarkMode?{borderColor:'#b4edfe'}:{borderColor:'#eee'}}>
               <div className="card-content">
-                <h1>15</h1>
+                <h1>18</h1>
                 <p>PROJECTS<br />COMPLETED</p>
               </div>
               </Col>

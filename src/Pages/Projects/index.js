@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Sidebar from '../../Components/Sidebar'
 import './index.css';
-import projectImg from '../../assets/images/project.png';
-// import {Row,Col} from 'react-bootstrap'
-// import {IoMdArrowRoundForward} from 'react-icons/io';
-// import {RiDownload2Fill} from 'react-icons/ri';
-// import {GiSuitcase} from 'react-icons/gi';
-// import PercentageCircle from '../../Components/PercentageCircle'
+import {ProjectsArray} from '../../assets/ProjectsArray/ProjectsArray';
 
 function Projects ({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkMode}) {
   setActive('Projects');
@@ -50,51 +45,27 @@ function Projects ({hover,active,setActive,setHover,toggleDarkMode,setToggleDark
         </h1>
       </h1>
       <div className="projects-cards-section">
-        <div className="projects-cards-row">
-          <div className="projects-card-col">
+        {ProjectsArray.map((val,i)=>{
+          return (
+            <div key={i} className="projects-cards-row">
+          {val.row.map((val2,j)=>{
+            return (
+              <div key={j} className="projects-card-col">
             <div className="projects-card" onMouseOver={()=>setShowClickMe(false)}>
-              <img src={projectImg} alt="" />
+              <img src={val2.image} alt="" />
               <div className="projects-card-content" style={toggleDarkMode?{background:"rgb(47, 47, 47)",color:"#fff"}:{background:"#f3f3f3",color:"#666"}}>
-                <h1>REACT PROJECT</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, corporis.</p>
-                <button>VIEW</button>
+                <h1>{val2.name}</h1>
+                <p>Technolgy Used: {val2.techs}</p>
+                <a href={val2.link} target="_blank"><button>VIEW</button></a>
                 {showClickMe? <p style={toggleDarkMode?{color:"#fff"}:{color:"#666"}}>CLICK ME!</p>:''}
               </div>
             </div>
           </div>
-          <div className="projects-card-col">
-            <div className="projects-card">
-              <img src={projectImg} alt="" />
-              <div className="projects-card-content" style={toggleDarkMode?{background:"rgb(47, 47, 47)",color:"#fff"}:{background:"#f3f3f3",color:"#666"}}>
-                <h1>REACT PROJECT</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, corporis.</p>
-                <button>VIEW</button>
-              </div>
-            </div>
-          </div>
+            )
+          })}
         </div>
-        <div className="projects-cards-row">
-          <div className="projects-card-col">
-            <div className="projects-card">
-              <img src={projectImg} alt="" />
-              <div className="projects-card-content" style={toggleDarkMode?{background:"rgb(47, 47, 47)",color:"#fff"}:{background:"#f3f3f3",color:"#666"}}>
-                <h1>REACT PROJECT</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, corporis.</p>
-                <button>VIEW</button>
-              </div>
-            </div>
-          </div>
-          <div className="projects-card-col">
-            <div className="projects-card">
-              <img src={projectImg} alt="" />
-              <div className="projects-card-content" style={toggleDarkMode?{background:"rgb(47, 47, 47)",color:"#fff"}:{background:"#f3f3f3",color:"#666"}}>
-                <h1>REACT PROJECT</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, corporis.</p>
-                <button>VIEW</button>
-              </div>
-            </div>
-          </div>
-        </div>
+          )
+        })}
       </div>
     </div>
       <Sidebar hover={hover} setHover={setHover} active={active} setActive={setActive} toggleDarkMode={toggleDarkMode} setToggleDarkMode={setToggleDarkMode} />
