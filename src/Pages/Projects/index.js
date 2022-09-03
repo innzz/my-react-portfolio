@@ -55,9 +55,10 @@ function Projects ({hover,active,setActive,setHover,toggleDarkMode,setToggleDark
               <img src={val2.image} alt="" />
               <div className="projects-card-content" style={toggleDarkMode?{background:"rgb(47, 47, 47)",color:"#fff"}:{background:"#f3f3f3",color:"#666"}}>
                 <h1>{val2.name}</h1>
-                <p>Technolgy Used: {val2.techs}</p>
-                <a href={val2.link} target="_blank"><button>VIEW</button></a>
-                {showClickMe? <p style={toggleDarkMode?{color:"#fff"}:{color:"#666"}}>CLICK ME!</p>:''}
+                <p>{val2.desc}</p>
+                {/* <a href={val2.link} target="_blank"><button>VIEW</button></a> */}
+                <a href={val2.link} target="_blank"><span style={{color: 'white'}}>Click To View!</span></a>
+                {/* {showClickMe? <p style={toggleDarkMode?{color:"#fff"}:{color:"#666"}}>CLICK ME!</p>:''} */}
               </div>
             </div>
           </div>

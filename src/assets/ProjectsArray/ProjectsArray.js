@@ -1,20 +1,21 @@
 import Project1 from '../images/Project1.png';
+import Project2 from '../images/Project2.png';
 
 
 export const ProjectsArray = [
     {
         row: [
             {
-                name: 'YouTube Clone',
-                techs: 'ReactJS, MaterialUI, HTML, CSS',
+                name: 'YouTube 2.0 Clone',
+                desc: 'ReactJS, MaterialUI, HTML, CSS',
                 link: 'https://bright-cendol-6ad010.netlify.app/',
                 image: Project1
             },
             {
-                name: 'YouTube Clone',
-                techs: 'ReactJS, MaterialUI, HTML, CSS',
-                link: 'https://bright-cendol-6ad010.netlify.app/',
-                image: Project1
+                name: 'Real Estate App',
+                desc: 'Build and Deployed a Real Estate React & Next.js Application Using RealTime Api For designing i have used Chakra Ui',
+                link: 'https://real-estate-sigma-ten.vercel.app/',
+                image: Project2
             }
         ]
     },
@@ -22,13 +23,13 @@ export const ProjectsArray = [
         row : [
             {
                 name: 'YouTube Clone',
-                techs: 'ReactJS, MaterialUI, HTML, CSS',
+                desc: 'ReactJS, MaterialUI, HTML, CSS',
                 link: 'https://bright-cendol-6ad010.netlify.app/',
                 image: Project1
             },
             {
                 name: 'YouTube Clone',
-                techs: 'ReactJS, MaterialUI, HTML, CSS',
+                desc: 'ReactJS, MaterialUI, HTML, CSS',
                 link: 'https://bright-cendol-6ad010.netlify.app/',
                 image: Project1
             }
