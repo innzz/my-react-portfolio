@@ -32,23 +32,17 @@ function Projects ({hover,active,setActive,setHover,toggleDarkMode,setToggleDark
   }, []);
   
   const clickMeFunction = ()=>{
-    if (windowSize.innerWidth <= 700 && showClickMe !== 'mobile') {
+    if (windowSize.innerWidth <= 700 ) {
+      setShowClickToViewDevice('mobile');
       setShowClickMe('mobile');
     }
-    else if(windowSize.innerWidth > 700 && showClickMe !== 'desktop'){
-      setShowClickMe('desktop');
-    }
-    else{
-      setShowClickMe('none')
-    }
-    if (windowSize.innerWidth <= 700) {
-      setShowClickToViewDevice('mobile');
-    }
     else if(windowSize.innerWidth > 700){
+      setShowClickMe('desktop');
       setShowClickToViewDevice('desktop');
     }
     else{
       setShowClickMe('none')
+      setShowClickToViewDevice('none')
     }
   };
 
