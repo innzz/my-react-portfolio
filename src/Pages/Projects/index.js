@@ -5,7 +5,14 @@ import {ProjectsArray} from '../../assets/ProjectsArray/ProjectsArray';
 
 function Projects ({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkMode}) {
   setActive('Projects');
-  const [showClickMe, setShowClickMe] = useState(false);
+  const [showClickMe, setShowClickMe] = useState('none');
+  const [showClickToView, setShowClickToView] = useState({
+    state: false,
+    index: -1
+  });
+  const [showClickToViewDevice, setShowClickToViewDevice] = useState('none');
+
+
   function getWindowSize() {
     const {innerWidth, innerHeight} = window;
     return {innerWidth, innerHeight};
@@ -25,11 +32,32 @@ function Projects ({hover,active,setActive,setHover,toggleDarkMode,setToggleDark
   }, []);
   
   const clickMeFunction = ()=>{
-    if (windowSize.innerWidth <= 700) {
-      setShowClickMe(true);
+    if (windowSize.innerWidth <= 700 && showClickMe !== 'mobile') {
+      setShowClickMe('mobile');
+    }
+    else if(windowSize.innerWidth > 700 && showClickMe !== 'desktop'){
+      setShowClickMe('desktop');
     }
     else{
-      setShowClickMe(false);
+      setShowClickMe('none')
+    }
+    if (windowSize.innerWidth <= 700) {
+      setShowClickToViewDevice('mobile');
+    }
+    else if(windowSize.innerWidth > 700){
+      setShowClickToViewDevice('desktop');
+    }
+    else{
+      setShowClickMe('none')
+    }
+  };
+
+  const handleClickMeFunction = (index)=>{
+    if (showClickToViewDevice==='mobile') {
+      setShowClickToView({
+        state: true,
+        index: index
+      });
     }
   }
 
@@ -53,12 +81,11 @@ function Projects ({hover,active,setActive,setHover,toggleDarkMode,setToggleDark
               <div key={j} className="projects-card-col">
             <div className="projects-card" onMouseOver={()=>setShowClickMe(false)}>
               <img src={val2.image} alt="" />
-              <div className="projects-card-content" style={toggleDarkMode?{background:"rgb(47, 47, 47)",color:"#fff"}:{background:"#f3f3f3",color:"#666"}}>
+              <div className="projects-card-content" onClick={()=> handleClickMeFunction(j)} style={toggleDarkMode?{background:"rgb(47, 47, 47)",color:"#fff"}:{background:"#f3f3f3",color:"#666"}}>
                 <h1>{val2.name}</h1>
                 <p>{val2.desc}</p>
-                {/* <a href={val2.link} target="_blank"><button>VIEW</button></a> */}
-                <a href={val2.link} target="_blank"><span style={{color: 'white'}}>Click To View!</span></a>
-                {/* {showClickMe? <p style={toggleDarkMode?{color:"#fff"}:{color:"#666"}}>CLICK ME!</p>:''} */}
+                {showClickToViewDevice === 'desktop' ? <a href={val2.link} target="_blank"><span style={{color: 'white'}}>Click To View!</span></a> : showClickToViewDevice === 'mobile' ? showClickToView.state && showClickToView.index === j && <a href={val2.link} target="_blank"><span style={{color: 'white'}}>Click To View!</span></a> : ''}
+                {showClickMe === 'mobile' ? <p className='bouncingText' style={toggleDarkMode?{color:"#fff"}:{color:"#666"}}>CLICK ME!</p> : showClickMe === 'desktop' ? <p className='bouncingText' style={toggleDarkMode?{color:"#fff"}:{color:"#666"}}>HOVER ME!</p> : '' }
               </div>
             </div>
           </div>

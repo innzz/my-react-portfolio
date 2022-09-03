@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://bright-cendol-6ad010.netlify.app/">Link to Project</a>
-  <img src='./src/assets/images/Project1.png' width="350" title="hover text">
+    <a href="my-react-portfolio-innzz.vercel.app">Link to Project</a>
+    <img src='./src/assets/images/PorFolioImage.png' width="500" title="hover text">
 </p>
 

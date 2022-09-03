@@ -7,7 +7,7 @@ export const ProjectsArray = [
         row: [
             {
                 name: 'YouTube 2.0 Clone',
-                desc: 'ReactJS, MaterialUI, HTML, CSS',
+                desc: 'Build and Deployed a Modern YouTube Clone Application in React JS with Material UI 5',
                 link: 'https://bright-cendol-6ad010.netlify.app/',
                 image: Project1
             },
