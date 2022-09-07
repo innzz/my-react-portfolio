@@ -54,8 +54,8 @@
     transition: 0.7s;
     animation: fadeInBottom;
     opacity: 0;
-    animation-delay: 1s;
-    animation-duration: 1.5s;
+    animation-delay: 0.5s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
     z-index: -1;
 }

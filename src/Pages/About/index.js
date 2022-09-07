@@ -40,7 +40,7 @@ function About({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkMode
     }
     if(e.currentTarget.scrollTop >= 30){
       setAnimationSkillsSection({animation: 'fadeInRight',
-      animationDelay: '0.3s',
+      animationDelay: '0.4s',
       animationDuration: '0.5s',
       animationFillMode: 'forwards'});
       // console.log(e.currentTarget.scrollTop)
@@ -51,7 +51,7 @@ function About({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkMode
     }
     if(e.currentTarget.scrollTop >= 660){
       setEducationSection({animation: 'fadeIn',
-      animationDelay: '0.5s',
+      animationDelay: '0.4s',
       animationDuration: '0.5s',
       animationFillMode: 'forwards'});
       // console.log(e.currentTarget.scrollTop)
