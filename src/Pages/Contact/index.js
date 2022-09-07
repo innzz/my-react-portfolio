@@ -23,25 +23,25 @@ function Contact ({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkM
       <div className="contact-content">
         <div className="contact-details">
           <h1 style={toggleDarkMode?{color:'#fff'}:{color:'#666'}} >DON'T BE SHY !</h1>
-          <p style={toggleDarkMode?{color:'rgb(250, 250, 250)'}:{color:'#777'}}>Let's have some Words.</p>
+          <p style={toggleDarkMode?{color:'rgb(250, 250, 250)'}:{color:'#777'}}>Let's Connect.</p>
           <div className="logo-heading-content">
             <ImLocation size={35} />
             <div className="heading-content">
-            <h3 style={toggleDarkMode?{color:'rgb(211, 211, 211)'}:{color:'#666'}} >ADDRESS POINT</h3>
+            {/* <h3 style={toggleDarkMode?{color:'rgb(211, 211, 211)'}:{color:'#666'}} >ADDRESS POINT</h3> */}
             <p style={toggleDarkMode?{color:'rgb(250, 250, 250)'}:{color:'#777'}} >INDIA, MUMBAI, DADAR <br />MUMBAI:- 400015</p>
             </div>
           </div>
           <div className="logo-heading-content">
             <RiMailOpenFill size={35} />
             <div className="heading-content">
-            <h3 style={toggleDarkMode?{color:'rgb(211, 211, 211)'}:{color:'#666'}} >MAIL ME</h3>
+            {/* <h3 style={toggleDarkMode?{color:'rgb(211, 211, 211)'}:{color:'#666'}} >MAIL ME</h3> */}
             <p style={toggleDarkMode?{color:'rgb(250, 250, 250)'}:{color:'#777'}} >inzamam.pawaskar@gmail.com</p>
             </div>
           </div>
           <div className="logo-heading-content">
             <FaPhoneSquareAlt size={35} />
             <div className="heading-content">
-            <h3 style={toggleDarkMode?{color:'rgb(211, 211, 211)'}:{color:'#666'}} >CALL ME</h3>
+            {/* <h3 style={toggleDarkMode?{color:'rgb(211, 211, 211)'}:{color:'#666'}} >CALL ME</h3> */}
             <p style={toggleDarkMode?{color:'rgb(250, 250, 250)'}:{color:'#777'}} >+91 9137338941</p>
             </div>
           </div>
