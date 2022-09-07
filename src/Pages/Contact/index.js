@@ -16,14 +16,14 @@ function Contact ({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkM
     <div className='contact-page' >
       <h1 style={toggleDarkMode?{color:'#fff'}:{color:'#666'}} className='heading'>
         GET IN <span>TOUCH</span>
-        <h1 style={toggleDarkMode?{color:'rgb(47, 47, 47)'}:{color:'rgba(30,37,48,.07)'}} className="secondary-heading">
+        <span style={toggleDarkMode?{color:'rgb(47, 47, 47)'}:{color:'rgba(30,37,48,.07)'}} className="secondary-heading">
           CONTACT
-        </h1>
+        </span>
       </h1>
       <div className="contact-content">
         <div className="contact-details">
           <h1 style={toggleDarkMode?{color:'#fff'}:{color:'#666'}} >DON'T BE SHY !</h1>
-          <p style={toggleDarkMode?{color:'rgb(250, 250, 250)'}:{color:'#777'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, quos.</p>
+          <p style={toggleDarkMode?{color:'rgb(250, 250, 250)'}:{color:'#777'}}>Let's have some Words.</p>
           <div className="logo-heading-content">
             <ImLocation size={35} />
             <div className="heading-content">
@@ -46,8 +46,8 @@ function Contact ({hover,active,setActive,setHover,toggleDarkMode,setToggleDarkM
             </div>
           </div>
           <div className="account-links">
-              <GoMarkGithub size={28} />
-              <SiLinkedin size={28} />
+              <a href="https://www.linkedin.com/in/inzamam-pawaskar-6248bb226/" target="_blank" rel="noreferrer"><SiLinkedin color='rgb(113, 221, 255)' size={28} /></a>
+              <a href="https://github.com/innzz" target="_blank" rel="noreferrer"><GoMarkGithub color='rgb(113, 221, 255)' size={28} /></a>
             </div>
         </div>
         <div className="contact-inputs-container">

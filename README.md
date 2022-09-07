@@ -1,5 +1,4 @@
 <p align="center">
-    <a href="my-react-portfolio-innzz.vercel.app">Link to Project</a>
-    <img src='./src/assets/images/PortFolioImage.png' width="1000" title="hover text">
+    <a href="my-react-portfolio-innzz.vercel.app"><img src='./src/assets/images/PortFolioImage.png' width="1000" title="Click to visit Site"></a>
 </p>
 

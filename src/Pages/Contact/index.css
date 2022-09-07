@@ -67,7 +67,7 @@
     margin-top: 0;
 }
 
-.account-links > svg{
+.account-links > a > svg{
     color: rgb(113, 221, 255);
     margin: 0 0;
     margin-right: 30px;

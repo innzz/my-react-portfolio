@@ -62,9 +62,9 @@ function Projects ({hover,active,setActive,setHover,toggleDarkMode,setToggleDark
     <div className='projects-page' onLoad={clickMeFunction}>
       <h1 style={toggleDarkMode?{color:'#fff'}:{color:'#666'}} className='heading'>
         MY <span>PROJECTS</span>
-        <h1 style={toggleDarkMode?{color:'rgb(47, 47, 47)'}:{color:'rgba(30,37,48,.07)'}} className="secondary-heading">
+        <span style={toggleDarkMode?{color:'rgb(47, 47, 47)'}:{color:'rgba(30,37,48,.07)'}} className="secondary-heading">
           WORKS
-        </h1>
+        </span>
       </h1>
       <div className="projects-cards-section">
         {ProjectsArray.map((val,i)=>{
@@ -78,7 +78,7 @@ function Projects ({hover,active,setActive,setHover,toggleDarkMode,setToggleDark
               <div className="projects-card-content" onClick={()=> handleClickMeFunction(j)} style={toggleDarkMode?{background:"rgb(47, 47, 47)",color:"#fff"}:{background:"#f3f3f3",color:"#666"}}>
                 <h1>{val2.name}</h1>
                 <p>{val2.desc}</p>
-                {showClickToViewDevice === 'desktop' ? <a href={val2.link} target="_blank"><span style={{color: 'white'}}>Click To View!</span></a> : showClickToViewDevice === 'mobile' ? showClickToView.state && showClickToView.index === j && <a href={val2.link} target="_blank"><span style={{color: 'white'}}>Click To View!</span></a> : ''}
+                {showClickToViewDevice === 'desktop' ? <a href={val2.link} target="_blank" rel="noreferrer"><span style={{color: 'white'}}>Click To View!</span></a> : showClickToViewDevice === 'mobile' ? showClickToView.state && showClickToView.index === j && <a href={val2.link} target="_blank" rel="noreferrer"><span style={{color: 'white'}}>Click To View!</span></a> : ''}
                 {showClickMe === 'mobile' ? <p className='bouncingText' style={toggleDarkMode?{color:"#fff"}:{color:"#666"}}>CLICK ME!</p> : showClickMe === 'desktop' ? <p className='bouncingText' style={toggleDarkMode?{color:"#fff"}:{color:"#666"}}>HOVER ME!</p> : '' }
               </div>
             </div>
